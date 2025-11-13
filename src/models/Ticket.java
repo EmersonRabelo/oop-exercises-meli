@@ -5,6 +5,8 @@ import interfaces.Report;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 // Chamado
 public class Ticket implements Report {
@@ -28,6 +30,14 @@ public class Ticket implements Report {
         this.ticketEndTime = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
     }
 
+    public String getTicketStartTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm", Locale.getDefault());
+        return ticketStartTime.format(formatter);
+    }
+
+    public ZonedDateTime getTicketEndTime() {
+        return ticketEndTime;
+    }
 
     private void setClientName(String clientName) {
         if (clientName.isBlank()) throw new RuntimeException("Client name is blank.");
@@ -66,6 +76,7 @@ public class Ticket implements Report {
                     "clientName : '" + clientName
                     + '\''
                     + ", status : " + status
+                    + ", Start Time: " + this.getTicketStartTime()
                 + '}';
 
     }
