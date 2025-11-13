@@ -37,9 +37,9 @@ public class Main {
         serviceCounter.setTicket(ticket3);
 
         for (Ticket ticket : serviceCounter.getTickets()) {
-            System.out.println(ticket.generateReport());;
+            System.out.println(ticket.generateReport());
         }
 
-        System.out.println(serviceCounter.generateReport());;
+        System.out.println("\n"+serviceCounter.generateReport());;
     }
 }

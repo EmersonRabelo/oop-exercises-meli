@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 // Balcão
 public class ServiceCounter implements Report {
@@ -84,14 +85,18 @@ public class ServiceCounter implements Report {
     }
 
     @Override
-    public String generateReport() {
-        return "Ticket {"
+    public String generateReport() {;
+        return "Service Counter {"
                     + "Clerk : '" + this.clerk.getName()
                     + '\''
                     + ", Store : '" + this.getStoreName()
                     + '\''
-                    + ", Tickets : " + this.tickets.size()
-                    + ", Start Time : " + this.getServiceStartTime()
+                    + ", Tickets amount : " + this.tickets.size()
+                    + ",\n" + this.tickets
+                        .stream()
+                        .map(ticket -> ticket.generateReport())
+                        .collect(Collectors.joining(", \n")) // Entender melhor o uso
+                    + ", \nStart Time : " + this.getServiceStartTime()
                 + '}';
     }
 }
