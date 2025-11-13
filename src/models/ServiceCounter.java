@@ -1,7 +1,10 @@
 package models;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Random;
 
+// Balcão
 public class ServiceCounter {
     private Long id;
 
@@ -13,20 +16,12 @@ public class ServiceCounter {
 
     private Clerk clerk;
 
-    public ZonedDateTime getServiceStartTime() {
-        return serviceStartTime;
+    public void startCustomerService() {
+        this.serviceStartTime = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
     }
 
-    public void setServiceStartTime(ZonedDateTime serviceStartTime) {
-        this.serviceStartTime = serviceStartTime;
-    }
-
-    public ZonedDateTime getServiceEndTime() {
-        return serviceEndTime;
-    }
-
-    public void setServiceEndTime(ZonedDateTime serviceEndTime) {
-        this.serviceEndTime = serviceEndTime;
+    public void finishCustomerService() {
+        this.serviceEndTime = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
     }
 
     public Clerk getClerk() {
@@ -41,15 +36,22 @@ public class ServiceCounter {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    private void setId() {
+        Random random = new Random();
+        this.id = random.nextLong();
     }
 
     public String getStoreName() {
         return storeName;
     }
 
-    public void setStoreName(String storeName) {
+    private void setStoreName(String storeName) {
+        if(storeName.isBlank()) throw new RuntimeException("Store name is blank.");
         this.storeName = storeName;
+    }
+
+    public ServiceCounter(String storeName) {
+        this.setStoreName(storeName);
+        this.setId();
     }
 }

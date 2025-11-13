@@ -1,16 +1,20 @@
 package models;
 
+import java.util.Random;
+
+// Atendente
 public class Clerk {
     private Long id;
     private String name;
-    private Long registration;
+    private String registration;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    private void setId() {
+        Random random = new Random();
+        this.id = random.nextLong();
     }
 
     public String getName() {
@@ -18,14 +22,22 @@ public class Clerk {
     }
 
     public void setName(String name) {
+        if(name.isBlank()) throw new RuntimeException("Name is blank.");
         this.name = name;
     }
 
-    public Long getRegistration() {
+    public String getRegistration() {
         return registration;
     }
 
-    public void setRegistration(Long registration) {
-        this.registration = registration;
+    private void setRegistration() {
+        Random random = new Random();
+        this.registration = String.format("BR%d", random.nextInt(9000) + 1000); // +1000 garante 4 digitos
+    }
+
+    public Clerk(String name) {
+        this.setName(name);
+        this.setId();
+        this.setRegistration();
     }
 }
