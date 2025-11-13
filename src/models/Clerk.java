@@ -8,13 +8,22 @@ public class Clerk {
     private String name;
     private String registration;
 
-    public Long getId() {
-        return id;
+    private void setRegistration() {
+        Random random = new Random();
+        this.registration = String.format("BR%d", random.nextInt(9000) + 1000); // +1000 garante 4 digitos
+    }
+
+    public String getRegistration() {
+        return registration;
     }
 
     private void setId() {
         Random random = new Random();
         this.id = random.nextLong();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -24,15 +33,6 @@ public class Clerk {
     public void setName(String name) {
         if(name.isBlank()) throw new RuntimeException("Name is blank.");
         this.name = name;
-    }
-
-    public String getRegistration() {
-        return registration;
-    }
-
-    private void setRegistration() {
-        Random random = new Random();
-        this.registration = String.format("BR%d", random.nextInt(9000) + 1000); // +1000 garante 4 digitos
     }
 
     public Clerk(String name) {
