@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe69df6-1543-4aaa-b6cd-d0dab3d11b85" name="Changes" comment="Add: Métodos">
-      <change afterPath="$PROJECT_DIR$/src/models/Report.java" afterDir="false" />
+    <list default="true" id="2fe69df6-1543-4aaa-b6cd-d0dab3d11b85" name="Changes" comment="Add: OOP Improvements">
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ServiceCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ServiceCounter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763050668931</updated>
-      <workItem from="1763050670059" duration="5959000" />
+      <workItem from="1763050670059" duration="9316000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1763056959298</created>
@@ -84,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1763058919397</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add: OOP Improvements">
+      <created>1763062336680</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763062336680</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +114,7 @@
     <MESSAGE value="Add: (1) Classes" />
     <MESSAGE value="Change project settings" />
     <MESSAGE value="Add: Métodos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: Métodos" />
+    <MESSAGE value="Add: OOP Improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: OOP Improvements" />
   </component>
 </project>
