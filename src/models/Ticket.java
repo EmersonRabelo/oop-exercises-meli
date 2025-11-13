@@ -73,9 +73,11 @@ public class Ticket implements Report {
     @Override
     public String generateReport() {
         return "Ticket {" +
-                    "clientName : '" + clientName
+                    "Client name : '" + clientName
                     + '\''
-                    + ", status : " + status
+                    + ", Clerk name : '" + this.getClerk().getName()
+                    + '\''
+                    + ", Status : " + status
                     + ", Start Time: " + this.getTicketStartTime()
                 + '}';
 

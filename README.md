@@ -1,12 +1,11 @@
 Report result:
 
-
-Ticket {clientName : 'Emerson', status : ABERTO, Start Time: 13/11/2025 18:20}
-Ticket {clientName : 'Ana', status : EM_ATENDIMENTO, Start Time: 13/11/2025 18:20}
-Ticket {clientName : 'Lais', status : FECHADO, Start Time: 13/11/2025 18:20}
+Ticket {Client name : 'Emerson', Clerk name : 'Aline', Status : ABERTO, Start Time: 13/11/2025 18:28}
+Ticket {Client name : 'Ana', Clerk name : 'Aline', Status : EM_ATENDIMENTO, Start Time: 13/11/2025 18:28}
+Ticket {Client name : 'Lais', Clerk name : 'Aline', Status : FECHADO, Start Time: 13/11/2025 18:28}
 
 Service Counter {Clerk : 'Aline', Store : 'Steam', Tickets amount : 3,
-Ticket {clientName : 'Emerson', status : ABERTO, Start Time: 13/11/2025 18:20},
-Ticket {clientName : 'Ana', status : EM_ATENDIMENTO, Start Time: 13/11/2025 18:20},
-Ticket {clientName : 'Lais', status : FECHADO, Start Time: 13/11/2025 18:20},
-Start Time : 13/11/2025 18:20}
+Ticket {Client name : 'Emerson', Clerk name : 'Aline', Status : ABERTO, Start Time: 13/11/2025 18:28},
+Ticket {Client name : 'Ana', Clerk name : 'Aline', Status : EM_ATENDIMENTO, Start Time: 13/11/2025 18:28},
+Ticket {Client name : 'Lais', Clerk name : 'Aline', Status : FECHADO, Start Time: 13/11/2025 18:28},
+Start Time : 13/11/2025 18:28}
