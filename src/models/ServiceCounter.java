@@ -4,8 +4,10 @@ import interfaces.Report;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 // Balcão
@@ -44,8 +46,9 @@ public class ServiceCounter implements Report {
         this.serviceStartTime = ZonedDateTime.now(ZoneId.of("America/Sao_Paulo"));
     }
 
-    public ZonedDateTime getServiceStartTime() {
-        return serviceStartTime;
+    public String getServiceStartTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm", Locale.getDefault());
+        return serviceStartTime.format(formatter);
     }
 
     public void finishCustomerService() {
@@ -72,11 +75,12 @@ public class ServiceCounter implements Report {
         this.tickets.add(ticket);
     }
 
-    public ServiceCounter(String storeName) {
+    public ServiceCounter(String storeName, Clerk clerk) {
         this.setStoreName(storeName);
         this.startCustomerService();
         this.setId();
         this.tickets = new ArrayList<>();
+        this.clerk = clerk;
     }
 
     @Override
@@ -84,10 +88,9 @@ public class ServiceCounter implements Report {
         return "Ticket {"
                     + "Clerk : '" + this.clerk.getName()
                     + '\''
-                    + ", Store : " + this.getStoreName()
+                    + ", Store : '" + this.getStoreName()
                     + '\''
                     + ", Tickets : " + this.tickets.size()
-                    + '\''
                     + ", Start Time : " + this.getServiceStartTime()
                 + '}';
     }
